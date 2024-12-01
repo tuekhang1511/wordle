@@ -73,8 +73,8 @@ num_attempts = [0,0,0,0,0,0,0,0,0,0]
 
 for i in range(0, 100):
     answer = random.choice(wordle.wordle_word_list)
-    attempts = wordle_solver_test(answer)
-    num_attempts[attempts] += 1
+    attempts = wordle_solver_test(answer) + 1
+    num_attempts[attempts-1] += 1
     print(attempts)
     total_attempts += attempts
 
