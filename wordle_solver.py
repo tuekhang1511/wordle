@@ -19,7 +19,7 @@ def filter_words(word_list, guess, feedback):
 
 def wordle_solver_test(answer):
     word_list = wordle.wordle_word_list
-    attempts = 1
+    attempts = 0
 
     while attempts < 20:
         if attempts == 0:
@@ -74,7 +74,7 @@ num_attempts = [0,0,0,0,0,0,0,0,0,0]
 for i in range(0, 100):
     answer = random.choice(wordle.wordle_word_list)
     attempts = wordle_solver_test(answer)
-    num_attempts[attempts-1] += 1
+    num_attempts[attempts] += 1
     print(attempts)
     total_attempts += attempts
 
