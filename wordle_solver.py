@@ -1,5 +1,6 @@
 import wordle
 import random
+import matplotlib.pyplot as plt
 
 answer = wordle.answer
 
@@ -65,14 +66,31 @@ def wordle_solver():
     if attempts == 20 and feedback != "GGGGG":
         print("Failed to guess the word.")
 
-# wordle_solver()
+wordle_solver()
 
-total_attempts = 0
+# total_attempts = 0
+# num_attempts = [0,0,0,0,0,0,0,0,0,0]
 
-for i in range(0, 2000):
-    answer = random.choice(wordle.wordle_word_list)
-    attempts = wordle_solver_test(answer)
-    print(attempts)
-    total_attempts += attempts
-average = total_attempts / 2000
-print(average)
+# for i in range(0, 100):
+#     answer = random.choice(wordle.wordle_word_list)
+#     attempts = wordle_solver_test(answer)
+#     num_attempts[attempts-1] += 1
+#     print(attempts)
+#     total_attempts += attempts
+
+# average = total_attempts / 100
+# print(average)
+
+# # Plotting the data
+# attempt_labels = list(range(1, 11))  # Labels for attempts (1 to 10)
+# plt.bar(attempt_labels, num_attempts, color='skyblue', edgecolor='black')
+
+# # Adding labels and title
+# plt.xlabel('Number of Attempts')
+# plt.ylabel('Frequency')
+# plt.title('Distribution of Wordle Attempts')
+# plt.xticks(attempt_labels)
+# plt.legend()
+
+# # Show the plot
+# plt.show()

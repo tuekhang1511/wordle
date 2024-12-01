@@ -414,6 +414,7 @@ cloak
 clock
 clone
 close
+clogs
 cloth
 cloud
 clout
