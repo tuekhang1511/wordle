@@ -16,13 +16,13 @@ def filter_words(word_list, guess, feedback):
 
     return [word for word in word_list if matches_feedback(word)]
 
-def wordle_solver(answer):
-    word_list = wordle.wordle_all_guesses
+def wordle_solver_test(answer):
+    word_list = wordle.wordle_word_list
     attempts = 0
 
     while attempts < 20:
         if attempts == 0:
-            guess = "tarse"
+            guess = "soare"
         else:
             guess = wordle.select_best_guess(word_list, wordle.wordle_word_list)
         feedback = wordle.get_feedback(guess, answer)
@@ -40,7 +40,7 @@ def wordle_solver(answer):
 
 
 def wordle_solver():
-    word_list = wordle.wordle_all_guesses
+    word_list = wordle.wordle_word_list
     attempts = 0
 
     while attempts < 20:
@@ -65,14 +65,14 @@ def wordle_solver():
     if attempts == 20 and feedback != "GGGGG":
         print("Failed to guess the word.")
 
-wordle_solver()
+# wordle_solver()
 
-# total_attempts = 0
+total_attempts = 0
 
-# for i in range(0, 100):
-#     answer = random.choice(wordle.wordle_word_list)
-#     attempts = wordle_solver(answer)
-#     print(attempts)
-#     total_attempts += attempts
-# average = total_attempts / 100
-# print(average)
+for i in range(0, 2000):
+    answer = random.choice(wordle.wordle_word_list)
+    attempts = wordle_solver_test(answer)
+    print(attempts)
+    total_attempts += attempts
+average = total_attempts / 2000
+print(average)
